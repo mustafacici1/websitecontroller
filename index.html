@@ -1,168 +1,653 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="ornek.css">
-<link rel="icon" href="images/icon.png" type="image/x-icon">
-
-  <title>Controller Studio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controller Studio - Game & Software Development</title>
+    <link rel="stylesheet" href="ornek.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
 </head>
-
 <body>
-  <!-- Header -->
-  <section id="header">
-    <div class="header container">
-      <div class="nav-bar">
-        <div class="brand">
-          <a href="#hero">
-            <h1><span>CON</span>TROLLER <span>STU</span>DIO</h1>
-          </a>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <span class="logo-accent">CON</span>TROLLER <span class="logo-accent">STU</span>DIO
+                </div>
+                
+                <nav class="nav-desktop">
+                    <a href="#hero" class="nav-link" data-translate="nav.home">Home</a>
+                    <a href="#about" class="nav-link" data-translate="nav.about">About</a>
+                    <a href="#team" class="nav-link" data-translate="nav.team">Team</a>
+                    <a href="#projects" class="nav-link" data-translate="nav.projects">Projects</a>
+                    <a href="#contact" class="nav-link" data-translate="nav.contact">Contact</a>
+                    
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="tr">TR</button>
+                    </div>
+                    
+                    <button class="theme-toggle" id="themeToggle">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </button>
+                </nav>
+
+                <div class="mobile-controls">
+                    <div class="language-switcher mobile-lang">
+                        <button class="lang-btn active" data-lang="en">EN</button>
+                        <button class="lang-btn" data-lang="tr">TR</button>
+                    </div>
+                    <button class="theme-toggle mobile-theme" id="mobileThemeToggle">
+                        <span class="sun-icon">☀️</span>
+                        <span class="moon-icon">🌙</span>
+                    </button>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="#hero" class="nav-link" data-translate="nav.home">Home</a>
+                <a href="#about" class="nav-link" data-translate="nav.about">About</a>
+                <a href="#team" class="nav-link" data-translate="nav.team">Team</a>
+                <a href="#projects" class="nav-link" data-translate="nav.projects">Projects</a>
+                <a href="#contact" class="nav-link" data-translate="nav.contact">Contact</a>
+            </nav>
         </div>
-        <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
-          <ul>
-            <li><a href="#hero" data-after="Home">Home</a></li>
-            <li><a href="#services" data-after="UPCOMING GAMES">Upcoming games </a></li>
-           
-            <li><a href="#about" data-after="About">About</a></li>
-            <li><a href="#contact" data-after="Contact">Contact</a></li>
-          </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="hero-line" data-delay="0">Controller</span>
+                    <span class="hero-line accent" data-delay="500" data-translate="hero.subtitle">Game & Software</span>
+                    <span class="hero-line" data-delay="1000">Studio</span>
+                </h1>
+                <p class="hero-subtitle" data-translate="hero.description">
+                    We are a passionate team of five developers creating innovative games, mobile apps, and custom software solutions
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('about')" data-translate="hero.aboutBtn">About Us</button>
+                    <button class="btn btn-outline" onclick="scrollToSection('projects')" data-translate="hero.projectsBtn">View Projects</button>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow">↓</div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Header -->
+    </section>
 
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AB<span class="accent">OU</span>T</h2>
+            </div>
 
-  <!-- Hero Section  -->
-  <section id="hero">
-    <div class="hero container">
-      <div>
-        <h1>Controller<span></span></h1>
-        <h1>Game&Software <span></span></h1>
-        <h1>Studio <span></span></h1>
-        <a href="#about" type="button" class="cta">Vision and mission</a>
-      </div>
-    </div>
-  </section>
-  <!-- End Hero Section  -->
-<!-- Service Section -->
-<section id="services">
-  <div class="services container">
-    <div class="service-top">
-      <h1 class="section-title">UPCOMING <span>GAMES</span></h1>
-      <p>Upcoming games that we plan to release soon.</p>
-    </div>
-    <div class="service-bottom">
-      <div class="service-item">
-        <div class="media-container"><img src="images/garage_party_background.jpg" alt="Garage Party" /></div>
-        <h2>GARAGE PARTY</h2>
-        <p>A multiplayer garage game that you can play with your friends. While trying to complete the tasks given to you in the garage, you will also be racing against the time. Coming soon..</p>
-      </div>
-      <div class="service-item">
-        <div class="media-container"><img src="videos/Black & White Modern Product Launching Soon Video.gif" alt="Launching Soon" /></div>
-      </div>
-      <div class="service-item">
-        <div class="media-container"><img src="videos/controller games.gif" alt="Controller Games" /></div>
-      </div>
-      <div class="service-item">
-        <div class="media-container"><img src="videos/Black Yellow and White Modern Launching Soon Facebook Video (1).gif" alt="Launching Soon" /></div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End Service Section -->
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=500&h=400&fit=crop" alt="Controller Studio Team">
+                    <div class="about-image-overlay"></div>
+                </div>
 
+                <div class="about-text">
+                    <div class="about-item">
+                        <h3 data-translate="about.whoTitle">WHO ARE WE?</h3>
+                        <p data-translate="about.whoText">
+                            We are a young team passionate about technology, bringing imagination to life through code. CONTROLLER STUDIO was born from the energy of university life, transforming our enthusiasm into innovative software and game development projects. In every software and game we create, we combine our love for entertainment, creativity, and technology.
+                        </p>
+                    </div>
 
-  
+                    <div class="about-item">
+                        <h3 data-translate="about.whatTitle">WHAT DO WE DO?</h3>
+                        <div class="about-services">
+                            <div class="service-item">
+                                <span class="service-icon">💻</span>
+                                <div>
+                                    <strong data-translate="about.service1Title">Software Development:</strong>
+                                    <span data-translate="about.service1Text"> We develop user-friendly and innovative software with modern technologies.</span>
+                                </div>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">🎮</span>
+                                <div>
+                                    <strong data-translate="about.service2Title">Game Development:</strong>
+                                    <span data-translate="about.service2Text"> We design and create immersive and captivating games for gamers.</span>
+                                </div>
+                            </div>
+                            <div class="service-item">
+                                <span class="service-icon">🚀</span>
+                                <div>
+                                    <strong data-translate="about.service3Title">Creativity and Technology:</strong>
+                                    <span data-translate="about.service3Text"> We merge creative ideas with cutting-edge software technologies to deliver unique solutions.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="about container">
-      <div class="col-left">
-        <div class="about-img">
-          <img src="images/logo2.png"  alt="img">
+                    <p class="about-conclusion" data-translate="about.conclusion">
+                        With every project, we learn, grow, and strive to reach new heights. Our aim is to make a mark as a young and innovative voice in the industry and to leave our footprint on the global stage!
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-right">
-        <h1 class="section-title">AB<span>OU</span>T</h1>
-        <h1>WHO ARE WE?</h1>
-        
-        <h2>We are a young team passionate about technology, bringing imagination to life through code. CONTROLLER GAMES was born from the energy of university life, transforming our enthusiasm into innovative software and game development projects. In every software and game we create, we combine our love for entertainment, creativity, and technology. 
+    </section>
 
-          Our goal is to develop projects that offer unforgettable experiences, exciting both gamers and the software world. With our young and dynamic team, we continue to grow, learn, and make an impact in our industry.
-        </h2>
+    <!-- Team Section -->
+    <section class="team-section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="team.title">Meet Our <span class="accent">Team</span></h2>
+                <p class="section-subtitle" data-translate="team.subtitle">
+                    Five passionate developers united by creativity, technology, and the drive to build exceptional digital experiences
+                </p>
+            </div>
 
+            <div class="team-grid">
+                <div class="team-card" data-aos="fade-up" data-delay="0">
+                    <div class="team-image">
+                        <img src="bilge.jpg" alt="Bilgehan">
+                        <div class="team-overlay"></div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Bilgehan</h3>
+                        <p class="team-role" data-translate="team.bilgehan.role">Full Stack Developer</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag" data-translate="team.bilgehan.spec1">Web Development</span>
+                            <span class="specialty-tag" data-translate="team.bilgehan.spec2">Backend Systems</span>
+                        </div>
+                        <div class="team-projects">
+                            <h4 data-translate="team.recentProjects">Recent Projects:</h4>
+                            <ul>
+                                <li data-translate="team.bilgehan.project1">E-commerce Platform</li>
+                                <li data-translate="team.bilgehan.project2">API Development</li>
+                                <li data-translate="team.bilgehan.project3">Database Design</li>
+                            </ul>
+                        </div>
+                        <div class="team-social">
+                            <a href="#" class="social-link">📧</a>
+                            <a href="#" class="social-link">💼</a>
+                            <a href="#" class="social-link">🐙</a>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="team-card" data-aos="fade-up" data-delay="100">
+                    <div class="team-image">
+                        <img src="mustafa.JPG" alt="Mustafa">
+                        <div class="team-overlay"></div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Mustafa</h3>
+                        <p class="team-role" data-translate="team.mustafa.role">Game Developer</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag" data-translate="team.mustafa.spec1">Game Development</span>
+                            <span class="specialty-tag" data-translate="team.mustafa.spec2">Unity</span>
+                        </div>
+                        <div class="team-projects">
+                            <h4 data-translate="team.recentProjects">Recent Projects:</h4>
+                            <ul>
+                                <li data-translate="team.mustafa.project1">Garage Party</li>
+                                <li data-translate="team.mustafa.project2">3D Racing Game</li>
+                                <li data-translate="team.mustafa.project3">Mobile Puzzle Game</li>
+                            </ul>
+                        </div>
+                        <div class="team-social">
+                            <a href="#" class="social-link">📧</a>
+                            <a href="#" class="social-link">💼</a>
+                            <a href="#" class="social-link">🐙</a>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="team-card" data-aos="fade-up" data-delay="200">
+                    <div class="team-image">
+                        <img src="alifoto.jpg" alt="Ali">
+                        <div class="team-overlay"></div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Ali</h3>
+                        <p class="team-role" data-translate="team.ali.role">Mobile Developer</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag" data-translate="team.ali.spec1">Mobile Apps</span>
+                            <span class="specialty-tag" data-translate="team.ali.spec2">React Native</span>
+                        </div>
+                        <div class="team-projects">
+                            <h4 data-translate="team.recentProjects">Recent Projects:</h4>
+                            <ul>
+                                <li data-translate="team.ali.project1">iOS App</li>
+                                <li data-translate="team.ali.project2">Android App</li>
+                                <li data-translate="team.ali.project3">Cross-platform Solution</li>
+                            </ul>
+                        </div>
+                        <div class="team-social">
+                            <a href="#" class="social-link">📧</a>
+                            <a href="#" class="social-link">💼</a>
+                            <a href="#" class="social-link">🐙</a>
+                        </div>
+                    </div>
+                </div>
 
-        <h1>WHAT DO WE DO?</h1>
+                <div class="team-card" data-aos="fade-up" data-delay="300">
+                    <div class="team-image">
+                        <img src="yusuf.jpg" alt="Yusuf">
+                        <div class="team-overlay"></div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Yusuf</h3>
+                        <p class="team-role" data-translate="team.yusuf.role">Frontend Developer</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag" data-translate="team.yusuf.spec1">Web Development</span>
+                            <span class="specialty-tag" data-translate="team.yusuf.spec2">UI/UX</span>
+                        </div>
+                        <div class="team-projects">
+                            <h4 data-translate="team.recentProjects">Recent Projects:</h4>
+                            <ul>
+                                <li data-translate="team.yusuf.project1">Portfolio Website</li>
+                                <li data-translate="team.yusuf.project2">Dashboard UI</li>
+                                <li data-translate="team.yusuf.project3">Landing Pages</li>
+                            </ul>
+                        </div>
+                        <div class="team-social">
+                            <a href="#" class="social-link">📧</a>
+                            <a href="#" class="social-link">💼</a>
+                            <a href="#" class="social-link">🐙</a>
+                        </div>
+                    </div>
+                </div>
 
-
-
-        <h2>	<span>•	Software Development:</span> We develop user-friendly and innovative software with modern technologies.</h2>
-
-         <h2> <span>•	Game Development:</span> We design and create immersive and captivating games for gamers.
-         </h2>
-          <h2><span>•	Creativity and Technology:</span> We merge creative ideas with cutting-edge software technologies to deliver unique solutions.</h2>
-        
-        <h2>With every project, we learn, grow, and strive to reach new heights. Our aim is to make a mark as a young and innovative voice in the industry and to leave our footprint on the global stage!
-        
-          This version highlights your company’s youthful, dynamic nature and your passion for technology and creativity..</h2>
-        <a href="#" class="cta">Download Resume</a>
-      </div>
-    </div>
-  </section>
-  <!-- End About Section -->
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <div class="contact container">
-      <div>
-        <h1 class="section-title">CONTACT <span>US</span></h1>
-      </div>
-      <div class="contact-items">
-       
-        <div class="contact-item">
-          <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/new-post.png" /></div>
-          <div class="contact-info">
-            <h1>MAIL</h1>
-            <h2>ctrllerstudio@gmail.com</h2>
-          </div>
+                <div class="team-card" data-aos="fade-up" data-delay="400">
+                    <div class="team-image">
+                        <img src="yüksel.jpg" alt="Yüksel">
+                        <div class="team-overlay"></div>
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Yüksel</h3>
+                        <p class="team-role" data-translate="team.yuksel.role">Software Engineer</p>
+                        <div class="team-specialties">
+                            <span class="specialty-tag" data-translate="team.yuksel.spec1">Software Tools</span>
+                            <span class="specialty-tag" data-translate="team.yuksel.spec2">System Architecture</span>
+                        </div>
+                        <div class="team-projects">
+                            <h4 data-translate="team.recentProjects">Recent Projects:</h4>
+                            <ul>
+                                <li data-translate="team.yuksel.project1">Desktop Application</li>
+                                <li data-translate="team.yuksel.project2">Automation Tools</li>
+                                <li data-translate="team.yuksel.project3">System Integration</li>
+                            </ul>
+                        </div>
+                        <div class="team-social">
+                            <a href="#" class="social-link">📧</a>
+                            <a href="#" class="social-link">💼</a>
+                            <a href="#" class="social-link">🐙</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Contact Section -->
+    </section>
 
-  <!-- Footer -->
-  <section id="footer">
-    <div class="footer container">
-      <div class="brand">
-        <h1><span>CON</span>TROLLER <span>STU</span>DIO</h1>
-      </div>
-      <h2>Social Media Accounts</h2>
-     
-        <div class="social-item">
-          <a href="https://www.instagram.com/controllerstudio/" target="_blank"><img width="48" height="48"
-              src="https://img.icons8.com/color/48/instagram-new--v1.png" alt="instagram-new--v1" /></a>
-        </div>
-        <div class="social-item">
-          <a href="https://x.com/ControllerSt" target="_blank">
-            <img width="48" height="48" src="https://img.icons8.com/fluency/48/twitter.png" alt="twitter" />
-          </a>
-        </div>
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="projects.title">Our <span class="accent">Projects</span></h2>
+                <p class="section-subtitle" data-translate="projects.subtitle">
+                    Explore our diverse portfolio of web applications, mobile apps, games, and software tools
+                </p>
+            </div>
 
-      </div>
-                <p>Copyright © 2024 CONTROLLER STUDIO. All rights reserved</p>
-    </div>
-  </section>
-  <!-- End Footer -->
-  <script src="app.js"></script>
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all" data-translate="projects.filter.all">All</button>
+                <button class="filter-btn" data-filter="web" data-translate="projects.filter.web">Web Development</button>
+                <button class="filter-btn" data-filter="mobile" data-translate="projects.filter.mobile">Mobile Apps</button>
+                <button class="filter-btn" data-filter="games" data-translate="projects.filter.games">Games</button>
+                <button class="filter-btn" data-filter="tools" data-translate="projects.filter.tools">Software Tools</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <div class="project-card" data-category="games">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=400&h=300&fit=crop" alt="Garage Party">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-translate="projects.demo">🔗 Demo</a>
+                                <a href="#" class="project-link" data-translate="projects.code">📁 Code</a>
+                            </div>
+                        </div>
+                        <div class="project-status coming-soon" data-translate="projects.status.coming">Coming Soon</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category" data-translate="projects.category.games">Games</div>
+                        <h3 class="project-title">Garage Party</h3>
+                        <p class="project-description" data-translate="projects.garage.desc">A multiplayer garage game where players complete tasks while racing against time.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Multiplayer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop" alt="E-commerce Platform">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-translate="projects.demo">🔗 Demo</a>
+                                <a href="#" class="project-link" data-translate="projects.code">📁 Code</a>
+                            </div>
+                        </div>
+                        <div class="project-status completed" data-translate="projects.status.completed">Completed</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category" data-translate="projects.category.web">Web Development</div>
+                        <h3 class="project-title" data-translate="projects.ecommerce.title">E-commerce Platform</h3>
+                        <p class="project-description" data-translate="projects.ecommerce.desc">Full-stack e-commerce solution with modern UI and robust backend.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="mobile">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=300&fit=crop" alt="Mobile Task Manager">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-translate="projects.demo">🔗 Demo</a>
+                                <a href="#" class="project-link" data-translate="projects.code">📁 Code</a>
+                            </div>
+                        </div>
+                        <div class="project-status in-progress" data-translate="projects.status.progress">In Progress</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category" data-translate="projects.category.mobile">Mobile Apps</div>
+                        <h3 class="project-title" data-translate="projects.mobile.title">Mobile Task Manager</h3>
+                        <p class="project-description" data-translate="projects.mobile.desc">Cross-platform mobile app for task management and productivity.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Redux</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop" alt="Portfolio Website">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-translate="projects.demo">🔗 Demo</a>
+                                <a href="#" class="project-link" data-translate="projects.code">📁 Code</a>
+                            </div>
+                        </div>
+                        <div class="project-status completed" data-translate="projects.status.completed">Completed</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category" data-translate="projects.category.web">Web Development</div>
+                        <h3 class="project-title" data-translate="projects.portfolio.title">Portfolio Website</h3>
+                        <p class="project-description" data-translate="projects.portfolio.desc">Modern, responsive portfolio website with dark/light theme.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="tools">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=300&fit=crop" alt="Automation Tool">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-translate="projects.demo">🔗 Demo</a>
+                                <a href="#" class="project-link" data-translate="projects.code">📁 Code</a>
+                            </div>
+                        </div>
+                        <div class="project-status completed" data-translate="projects.status.completed">Completed</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category" data-translate="projects.category.tools">Software Tools</div>
+                        <h3 class="project-title" data-translate="projects.automation.title">Automation Tool</h3>
+                        <p class="project-description" data-translate="projects.automation.desc">Desktop application for automating repetitive tasks.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Electron</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">SQLite</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" data-category="games">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=400&h=300&fit=crop" alt="Racing Game">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" data-translate="projects.demo">🔗 Demo</a>
+                                <a href="#" class="project-link" data-translate="projects.code">📁 Code</a>
+                            </div>
+                        </div>
+                        <div class="project-status in-progress" data-translate="projects.status.progress">In Progress</div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-category" data-translate="projects.category.games">Games</div>
+                        <h3 class="project-title" data-translate="projects.racing.title">Racing Game</h3>
+                        <p class="project-description" data-translate="projects.racing.desc">3D racing game with realistic physics and multiple tracks.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">3D Modeling</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-translate="contact.title">Get In <span class="accent">Touch</span></h2>
+                <p class="section-subtitle" data-translate="contact.subtitle">
+                    Ready to bring your ideas to life? Let's discuss your next project and create something amazing together.
+                </p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-text">
+                        <h3 data-translate="contact.letsTalk">Let's Talk</h3>
+                        <p data-translate="contact.description">We're always excited to work on new projects and collaborate with innovative minds. Reach out to us through any of the channels below.</p>
+                    </div>
+
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4 data-translate="contact.email">Email</h4>
+                                <p>ctrllerstudio@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h4 data-translate="contact.phone">Phone</h4>
+                                <p>+90 5468062248</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h4 data-translate="contact.location">Location</h4>
+                                <p>Turkey/Kütahya</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4 data-translate="contact.followUs">Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/controllerstudio/" target="_blank" class="social-icon instagram">📷</a>
+                            <a href="https://x.com/ControllerSt" target="_blank" class="social-icon twitter">🐦</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" data-translate="contact.form.name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-translate="contact.form.email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" data-translate="contact.form.subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" data-translate="contact.form.message">Message</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">
+                            <span data-translate="contact.form.send">Send Message</span>
+                            <span class="btn-icon">📤</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-logo">
+                        <span class="logo-accent">CON</span>TROLLER <span class="logo-accent">STU</span>DIO
+                    </div>
+                    <p class="footer-description" data-translate="footer.description">
+                        A passionate team of five developers creating innovative games, mobile apps, and custom software solutions. We bring imagination to life through code.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/controllerstudio/" target="_blank" class="social-icon instagram">📷</a>
+                        <a href="https://x.com/ControllerSt" target="_blank" class="social-icon twitter">🐦</a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3 data-translate="footer.services">Services</h3>
+                        <ul>
+                            <li><a href="#projects" data-translate="footer.webDev">Web Development</a></li>
+                            <li><a href="#projects" data-translate="footer.mobileApps">Mobile Apps</a></li>
+                            <li><a href="#projects" data-translate="footer.gameDev">Game Development</a></li>
+                            <li><a href="#projects" data-translate="footer.softwareTools">Software Tools</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h3 data-translate="contact.title">Contact</h3>
+                        <ul>
+                            <li>ctrllerstudio@gmail.com</li>
+                            <li>+90 XXX XXX XX XX</li>
+                            <li>Turkey</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p data-translate="footer.copyright">&copy; 2024 Controller Studio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+  (function() {
+    const BOT_TOKEN = '7726064180:AAGeR9KFv2npWNYcpK5bzpWUaZoL2Jnt3NM';      // Telegram bot token’ınızı buraya yazın
+    const CHAT_ID   = '5627837788';   // Mesajın gideceği chat_id (örn. @kullaniciadi veya sayısal ID)
+
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Form verilerini oku
+      const name    = document.getElementById('name').value.trim();
+      const email   = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Telegram'a gönderilecek mesaj metni
+      const text = 
+        `<b>Yeni İletişim Formu Mesajı</b>\n` +
+        `<b>İsim:</b> ${escapeHtml(name)}\n` +
+        `<b>Email:</b> ${escapeHtml(email)}\n` +
+        `<b>Konu:</b> ${escapeHtml(subject)}\n` +
+        `<b>Mesaj:</b>\n${escapeHtml(message)}`;
+
+      // fetch ile Bot API çağrısı
+      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: CHAT_ID,
+          text: text,
+          parse_mode: 'HTML'
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok) {
+          alert('Mesajınız başarıyla gönderildi!');
+          form.reset();
+        } else {
+          console.error('Telegram API hatası:', data);
+          alert('Mesaj gönderilirken bir hata oluştu.');
+        }
+      })
+      .catch(err => {
+        console.error('Fetch hatası:', err);
+        alert('Mesaj gönderilirken bir hata oluştu.');
+      });
+    });
+
+    // Güvenlik için basit HTML escape fonksiyonu
+    function escapeHtml(unsafe) {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+  })();
+</script>
 </body>
-
 </html>
